@@ -22,10 +22,9 @@ public class EqualSums06 {
             }
             if (leftSum == rightSum) {
                 System.out.println(index);
-                return; //прекъсвам цялата програма
+                return; 
             }
         }
-            //обхождам всички числа в масива, но нито едно не отговаря на условието
             System.out.println("no");
 
     }
