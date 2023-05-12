@@ -11,14 +11,14 @@ public class ZigZagArrays03 {
             String[] firstArr = new String[fourElements];
             String[] secondArr = new String[fourElements];
 
-        for (int lineAndIndex = 1; lineAndIndex <= fourElements ; lineAndIndex++) { // или го правим от 0, за да не пишем после lineAndIndex - 1
+        for (int lineAndIndex = 1; lineAndIndex <= fourElements ; lineAndIndex++) { 
             String[] elements = scanner.nextLine().split(" ");
-            String firstElement = elements[0];//след разделянето на два елемента със split, измъквам първия елемент от масива и го държа в променлива
-            String secondElement = elements[1];//измъквам елемента от масива и го държа в променлива
+            String firstElement = elements[0];
+            String secondElement = elements[1];
 
-            if (lineAndIndex % 2 == 0){ //ако редът е четен...
-                secondArr[lineAndIndex - 1] = firstElement; //така поставяме първия елемент в съответния масив,
-                // но оправяме позицията му и го поставяме на 0
+            if (lineAndIndex % 2 == 0){ 
+                secondArr[lineAndIndex - 1] = firstElement; 
+                
                 firstArr[lineAndIndex - 1] = secondElement;
             } else {
                 firstArr[lineAndIndex - 1] = firstElement;
