@@ -7,17 +7,17 @@ public class ArrayRotation04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] numbers = Arrays // може и само в String масив
+        int[] numbers = Arrays 
                 .stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
         int rotations = Integer.parseInt(scanner.nextLine());
         for (int i = 1; i <= rotations; i++) {
-            int firstNum = numbers[0]; //оказвам първия елемент
+            int firstNum = numbers[0]; 
             for (int index = 0; index < numbers.length - 1 ; index++) {
-                numbers[index] = numbers[index + 1];//премествам наляво с един елемент
+                numbers[index] = numbers[index + 1];
             }
-            numbers[numbers.length - 1] = firstNum;//на последния елемент поставям първия
+            numbers[numbers.length - 1] = firstNum;
         }
         for (int num: numbers) {
             System.out.print(num + " ");
