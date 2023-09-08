@@ -15,13 +15,16 @@ public class ArrayModifier09 {
         String command = scanner.nextLine();
         while (!command.equals("end")) {
             if (command.contains("swap")){
+        // contains защото командата swap идва с числа до нея
             int index1 = Integer.parseInt(command.split(" ")[1]);
+            //взимаме елемент от командата, която съдържа име на команда...
+                // и два елемента (индекси от горния масив)
+                // и парсваме до число, на съответната позиция, в случая 1
             int index2 = Integer.parseInt(command.split(" ")[2]);
-            int element1 = numbers[index1];
+            int element1 = numbers[index1]; // намираме индекса в масива и му взимаме стойността
             int element2 = numbers[index2];
-            numbers[index1] = element2;
+            numbers[index1] = element2; // разменяме стойностите на индексите
             numbers[index2] = element1;
-                
             }else if (command.contains("multiply")){
                 int index1 = Integer.parseInt(command.split(" ")[1]);
                 int index2 = Integer.parseInt(command.split(" ")[2]);
@@ -31,10 +34,13 @@ public class ArrayModifier09 {
                 int product = element1 * element2;
                 numbers[index1] = product;
             } else if (command.equals("decrease")){
- 
-               for (int index = 0; index <= numbers.length - 1; index++) {
+                //тук избираме дали е равно - equals
+                for (int index = 0; index <= numbers.length - 1; index++) {
+                    //обхождаме всички елементи в масива и ги намаляме с 1
                     numbers[index]--;
+                    //вариант 2
                     //numbers[index] = numbers[index] - 1;
+                    //вариант 3
                     //numbers[index]-= 1;
                 }
             }
@@ -46,6 +52,8 @@ public class ArrayModifier09 {
                 System.out.print(currentNumber + ", ");
             } else {
                 System.out.print(currentNumber);
+                //ако е последното число, отпечатай го
+                // без запетая и интервал
             }
         }
     }

@@ -9,22 +9,24 @@ public class EqualSums06 {
 
         int[] numbers = Arrays.stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt).toArray();
-        for (int index = 0; index <= numbers.length - 1; index++) {
-            int currentElement = numbers[index];
-            int leftSum = 0;
-            int rightSum = 0;
+        //1 2 3 3
+        for (int i = 0; i < numbers.length; i++) {
 
-            for (int leftIndex = 0; leftIndex < index; leftIndex++) {
-                leftSum += numbers[leftIndex];
+            int leftSum = 0;
+            for (int j = 0; j < i; j++) {
+                leftSum += numbers[j];
             }
-            for (int rightIndex = index + 1; rightIndex <= numbers.length - 1; rightIndex++) {
-                rightSum += numbers[rightIndex];
+            int rightSum = 0;
+            for (int j = i + 1; j < numbers.length; j++) {
+                rightSum += numbers[j];
             }
             if (leftSum == rightSum) {
-                System.out.println(index);
-                return; 
+                System.out.println(i);
+                return; //прекъсвам цялата програма, за да не ми изпише и долния принт
+                            // след прочитането на този
             }
         }
+            //обхождила съм всички числа в масива, но нито едно не отговаря на условието и принтирам
             System.out.println("no");
 
     }

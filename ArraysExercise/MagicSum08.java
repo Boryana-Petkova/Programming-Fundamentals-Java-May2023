@@ -14,16 +14,14 @@ public class MagicSum08 {
 
         int magicSum = Integer.parseInt(scanner.nextLine());
 
-        for (int index = 0; index <= numbersArr.length - 1 ; index++) {
-            int num = numbersArr[index];
-            for (int inIndex = index + 1; inIndex <= numbersArr.length - 1 ; inIndex++) {
-                int nextNum = numbersArr[inIndex];
+        for (int i = 0; i < numbersArr.length; i++) {
+            int num = numbersArr[i];
+            for (int j = i + 1; j < numbersArr.length; j++) {
+                int nextNum = numbersArr[j];
                 if (num + nextNum == magicSum){
                     System.out.println(num + " " + nextNum);
                 }
-
-                }
             }
-
+        }
     }
 }

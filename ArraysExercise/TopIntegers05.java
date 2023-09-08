@@ -12,18 +12,17 @@ public class TopIntegers05 {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        for (int index = 0; index <= numbers.length - 1; index++) {
-            int currentElement = numbers[index];
+        for (int i = 0; i <= numbers.length - 1; i++) {
+            int currentElement = numbers[i];
 
-            if (index == numbers.length - 1) {
+            if (i == numbers.length - 1) { // слагаме i а не currentNum, защото второто е стойност,
+                                         // докато i е индекс и може да се сравни с последния индекс
                 System.out.print(currentElement + " ");
                 break;
             }
-
             boolean isTop = false;
-
-            for (int i = index + 1; i <= numbers.length - 1; i++) {
-                int nextElement = numbers[i];
+            for (int j = i + 1; j <= numbers.length - 1; j++) { // сравняваме с всички дясностоящи числа
+                int nextElement = numbers[j];
                 if (currentElement > nextElement) {
                     isTop = true;
                 } else {
@@ -32,7 +31,8 @@ public class TopIntegers05 {
                 }
             }
                 if (isTop){
-                    System.out.print(currentElement + " ");
+                    System.out.print(currentElement + " "); // принтираме топ числата просто,
+                    // не ги поставяме в масив, и без това дължината му не може да се променя
             }
         }
     }

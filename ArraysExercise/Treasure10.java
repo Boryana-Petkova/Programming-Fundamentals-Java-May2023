@@ -45,13 +45,27 @@ public class Treasure10 {
                     }
 
                     List<String> subList = initialLoot.subList(initialLoot.size() - count, initialLoot.size());
-
+                        // нов лист, за да кажем от кой индекс до кой ще трием
                     System.out.println(String.join(", ", subList));
-
+                    // първо принтираме тези, които ще трием, тоест сублиста
                     initialLoot = initialLoot.subList(0, initialLoot.size() - count);
+                    // стария лист е равен на нов сублист,
+                    // който е от 0 до индекса, след който трием съответните брой индекси
 
                     break;
             }
+            // друг по-дълъг вариант на последната команда и итерациите й:
+            /*List<String> deleteNames = new ArrayList<>();
+                for (int i = itemsArr.size() - count; i >= 0; i++) {
+                        if (i >= 0 && i < itemsArr.size()){
+                            deleteNames.add(itemsArr.get(i));
+                            itemsArr.remove(i);
+                            i--;
+                        } else {
+                            break;
+                        }
+                }*/
+            //System.out.println(String.join(", ", deleteNames));
 
             line = scanner.nextLine();
         }
